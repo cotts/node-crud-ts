@@ -32,13 +32,20 @@ export const fetchAll = async (
 
 /**
  * Get Book By Id
- * @param _id Book _id
+ * @param id Book id
  */
-export const getById = async (_id: string): Promise<IBook> =>
-  Book.findOne({ _id }).lean()
+export const getById = async (id: number): Promise<IBook> =>
+  Book.findOne({ id }).lean()
 
 /**
- *  Create Book
+ *  Create Book Method
  * @param book Book Object to be created
  */
 export const create = async (book: IBook): Promise<IBook> => Book.create(book)
+
+/**
+ * Update Book method
+ * @param book Update book
+ */
+export const update = async (book: IBook) =>
+  Book.findOneAndUpdate({ id: book.id }, book)

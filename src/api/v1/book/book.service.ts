@@ -29,3 +29,10 @@ export const fetchAll = async (
 
   return Book.find().skip(skip).limit(limit)
 }
+
+/**
+ * Get Book By Id
+ * @param _id Book _id
+ */
+export const getById = async (_id: string): Promise<IBook> =>
+  Book.findOne({ _id }).lean()

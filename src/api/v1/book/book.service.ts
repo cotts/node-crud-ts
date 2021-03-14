@@ -17,9 +17,9 @@ const parseQuery = (skip: string, limit: string): IParams => ({
 })
 
 /**
- *
- * @param skip
- * @param limit
+ * Fetch all books
+ * @param skip - Skip value
+ * @param limit - limit value
  */
 export const fetchAll = async (
   skipParam: string,

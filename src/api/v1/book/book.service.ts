@@ -36,3 +36,9 @@ export const fetchAll = async (
  */
 export const getById = async (_id: string): Promise<IBook> =>
   Book.findOne({ _id }).lean()
+
+/**
+ *  Create Book
+ * @param book Book Object to be created
+ */
+export const create = async (book: IBook): Promise<IBook> => Book.create(book)

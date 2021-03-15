@@ -52,3 +52,11 @@ export const create = (req: Request, res: Response): void => {
     .then((data) => res.json(data))
     .catch((error) => res.send(error.message))
 }
+
+export const update = (req: Request, res: Response): void => {
+  const book: IBook = req.body
+  service
+    .update(book)
+    .then((data) => res.json(data))
+    .catch((error) => res.send(error.message))
+}

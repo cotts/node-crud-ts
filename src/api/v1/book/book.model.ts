@@ -6,19 +6,22 @@ export interface IBook extends Document {
   author: string
 }
 
-const BookSchema: Schema = new Schema({
-  title: {
-    type: String,
-    required: true,
+const BookSchema: Schema = new Schema(
+  {
+    title: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    author: {
+      type: String,
+      required: true,
+    },
   },
-  description: {
-    type: String,
-    required: true,
-  },
-  author: {
-    type: String,
-    required: true,
-  },
-})
+  { versionKey: false }
+)
 
 export default mongoose.model<IBook>('Book', BookSchema)

@@ -49,3 +49,10 @@ export const create = async (book: IBook): Promise<IBook> => Book.create(book)
  */
 export const update = async (book: IBook) =>
   Book.findOneAndUpdate({ id: book.id }, book)
+
+/**
+ * Remove book By Id
+ * @param id Book id
+ */
+export const remove = async (id: number): Promise<IBook | null> =>
+  Book.findOneAndRemove({ id })

@@ -44,6 +44,11 @@ export const getById = (req: ExpressRequest, res: Response): void => {
     .catch((error) => res.send(error.message))
 }
 
+/**
+ *
+ * @param req Create Book
+ * @param res
+ */
 export const create = (req: ExpressRequest, res: Response): void => {
   const book: IBook = req.body
 
@@ -53,6 +58,11 @@ export const create = (req: ExpressRequest, res: Response): void => {
     .catch((error) => res.send(error.message))
 }
 
+/**
+ *
+ * @param req Update book
+ * @param res
+ */
 export const update = (req: ExpressRequest, res: Response): void => {
   const book: IBook = req.body
   service
@@ -61,6 +71,11 @@ export const update = (req: ExpressRequest, res: Response): void => {
     .catch((error) => res.send(error.message))
 }
 
+/**
+ *
+ * @param req Remove book by id
+ * @param res
+ */
 export const remove = (req: ExpressRequest, res: Response): void => {
   const { id }: { id: string } = req.params
   service

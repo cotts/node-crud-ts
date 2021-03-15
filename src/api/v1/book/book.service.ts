@@ -48,7 +48,7 @@ export const create = async (book: IBook): Promise<IBook> => Book.create(book)
  * @param book Update book
  */
 export const update = async (book: IBook) =>
-  Book.findOneAndUpdate({ id: book.id }, book)
+  Book.findOneAndUpdate({ _id: book._id }, book, { new: true }).exec()
 
 /**
  * Remove book By Id

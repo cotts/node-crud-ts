@@ -6,7 +6,8 @@
   "rules": {
     "prettier": [true, ".prettierrc"],
     "radix": false,
-    "newline-before-return": true
+    "newline-before-return": true,
+    "no-console": false
   },
   "rulesDirectory": ["tslint-plugin-prettier"]
 }

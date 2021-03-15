@@ -34,8 +34,8 @@ export const fetchAll = async (
  * Get Book By Id
  * @param id Book id
  */
-export const getById = async (id: number): Promise<IBook> =>
-  Book.findOne({ id }).lean()
+export const getById = async (_id: string): Promise<IBook> =>
+  Book.findOne({ _id }).lean()
 
 /**
  *  Create Book Method
@@ -54,5 +54,5 @@ export const update = async (book: IBook) =>
  * Remove book By Id
  * @param id Book id
  */
-export const remove = async (id: number): Promise<IBook | null> =>
-  Book.findOneAndRemove({ id })
+export const remove = async (_id: string): Promise<IBook | null> =>
+  Book.findOneAndRemove({ _id })

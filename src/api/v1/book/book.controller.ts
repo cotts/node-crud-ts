@@ -7,7 +7,7 @@ interface Params {
   limit: string
 }
 
-interface Request {
+interface ExpressRequest {
   query: {
     skip: string
     limit: string
@@ -22,7 +22,7 @@ interface Request {
  * @param req Request from API
  * @param res Response to API
  */
-export const fetchAll = (req: Request, res: Response): void => {
+export const fetchAll = (req: ExpressRequest, res: Response): void => {
   const { skip, limit }: Params = req.query
 
   service
@@ -36,15 +36,15 @@ export const fetchAll = (req: Request, res: Response): void => {
  * @param req
  * @param res
  */
-export const getById = (req: Request, res: Response): void => {
-  const id = parseInt(req.params.id)
+export const getById = (req: ExpressRequest, res: Response): void => {
+  const { id }: { id: string } = req.params
   service
     .getById(id)
     .then((data) => res.json(data))
     .catch((error) => res.send(error.message))
 }
 
-export const create = (req: Request, res: Response): void => {
+export const create = (req: ExpressRequest, res: Response): void => {
   const book: IBook = req.body
 
   service
@@ -53,10 +53,18 @@ export const create = (req: Request, res: Response): void => {
     .catch((error) => res.send(error.message))
 }
 
-export const update = (req: Request, res: Response): void => {
+export const update = (req: ExpressRequest, res: Response): void => {
   const book: IBook = req.body
   service
     .update(book)
+    .then((data) => res.json(data))
+    .catch((error) => res.send(error.message))
+}
+
+export const remove = (req: ExpressRequest, res: Response): void => {
+  const { id }: { id: string } = req.params
+  service
+    .remove(id)
     .then((data) => res.json(data))
     .catch((error) => res.send(error.message))
 }

@@ -13,13 +13,13 @@ Book CRUS basic usint Typescript
 
 <br/>
 
-## Basic Routes
+## API Routes
 
-`GET /` - Get All Books (skip and limit can be passed as query)  
-`GET /:id` - Get Book by id
-`POST /` - Create Book
-`PUT /` - Update Book
-`DELETE /:id` - Delete Book By id
+`GET /api/v1/` - Get All Books (skip and limit can be passed as query)  
+`GET /api/v1/:id` - Get Book by id  
+`POST /api/v1/` - Create Book  
+`PUT /api/v1/` - Update Book  
+`DELETE /api/v1/:id` - Delete Book By id
 
 <hr/>
 <br/>

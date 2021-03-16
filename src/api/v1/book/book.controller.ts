@@ -45,8 +45,8 @@ export const getById = (req: ExpressRequest, res: Response): void => {
 }
 
 /**
- *
- * @param req Create Book
+ * Create Book
+ * @param req
  * @param res
  */
 export const create = (req: ExpressRequest, res: Response): void => {
@@ -59,8 +59,8 @@ export const create = (req: ExpressRequest, res: Response): void => {
 }
 
 /**
- *
- * @param req Update book
+ * Update book
+ * @param req
  * @param res
  */
 export const update = (req: ExpressRequest, res: Response): void => {
@@ -72,8 +72,8 @@ export const update = (req: ExpressRequest, res: Response): void => {
 }
 
 /**
- *
- * @param req Remove book by id
+ * Remove book by id
+ * @param req
  * @param res
  */
 export const remove = (req: ExpressRequest, res: Response): void => {
